@@ -12,6 +12,8 @@ int main(){
     std::cin >> s;
     std::cout << "The message is " << s << std::endl;
 
+    double n = 0;
+
     //stampa();
 
     return 0;
