@@ -37,19 +37,32 @@ int main(){
 */
 
     int test = 1000;
-
     int *pi = nullptr;
-
     pi = &test;
 
     std::cout << "Contenuto di test: " << test << std::endl;
-
     std::cout << "indirizzo di test: " << &test << std::endl;
-
     std::cout << "Contenuto di pi: " << pi << std::endl;
-
     std::cout << "Indirizzo di pi: " << &pi << std::endl;
 
+    int test2 = 999;
+    pi = &test2;
+    std::cout << "Contenuto del valore puntato: " << *pi << std::endl;
+
+    *pi = 100;
+    std::cout << "Contenuto di test2: " << test2 << std::endl;
+
+    int *pi2 = pi;
+
+    float *pf = nullptr;
+    pf = pi;
+
+    pi = pi + 200;
+
+    pi2 - pi;
+    pi2 + pi; //errore
+
+    pi[1] = 90; // *(pi + 1) = 90
 
     return 0;
 }
