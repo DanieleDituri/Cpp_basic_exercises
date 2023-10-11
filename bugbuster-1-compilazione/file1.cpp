@@ -10,12 +10,12 @@ void funzione1_1() {
 	
 	funzione3_2();
 	
-	funzine2_1();
+	funzione2_1();
 
-
+}
 
 void funzione2_1() {
 
-	std::cout<<"dentro funzione2_1"<<endl;
+	std::cout<<"dentro funzione2_1"<<std::endl;
 }
 

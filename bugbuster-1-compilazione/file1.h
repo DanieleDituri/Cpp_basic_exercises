@@ -1,4 +1,4 @@
-#ifdef FILE1_H
+#ifndef FILE1_H
 #define FILE1_H
 
 void funzione1_1();
