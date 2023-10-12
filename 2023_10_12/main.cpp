@@ -18,6 +18,8 @@
 #include <string>   // std::string
 #include "ops.h"    // dichiarazione di stampa()
 
+#include <sstream>
+
 void test_io() {
 
   std::cout << "Hello world" << std::endl;
@@ -121,11 +123,106 @@ void test_puntatori() {
 }
 
 void test_array_primitivi(){
-  
+  int a[10] = {0, 0, 0, 0, 0};
+
+  int *p = a;
+
+  int* b[5];
+
+  int *c;
+
+  std::cout << sizeof(a) << std::endl;
+  std::cout << sizeof(b) << std::endl;
+  std::cout << sizeof(c) << std::endl;
+
+  double d[2][3] = {{1, 2, 3}, {4, 5, 6}};
+
+  for(int i = 0 ; i < 2 ; ++i){
+    for(int j = 0 ; j < 3 ; ++j){
+      std::cout << d[i][j] << std::endl;
+    }
+    std::cout << std::endl;
+  }
+
+  double (*pd)[3] = d;
+
+  for(int i = 0 ; i < 2 ; ++i){
+    double *ptr = pd[i];
+    for(int j = 0 ; j < 3 ; ++j){
+      std::cout << ptr[j] << std::endl;
+    }
+    std::cout << std::endl;
+  }
+
+  /*
+  for(int i = 0 ; i < 4 ; ++i){
+    std::cout << p[i] << std::endl;
+  }
+  */
 }
 
-int main() {
+void test_reference(){
 
+  double d = 999;
+
+  double &ref = d;
+
+  std::cout << "Indirizzo di d: " << &d << std::endl;
+  std::cout << "Indirizzo di ref: " << &ref << std::endl;
+}
+
+void test_struct(){
+
+  struct pippo{
+    int i;
+    double d;
+    char c;
+  };
+
+  pippo p = {1, 3.14, 'o'};
+
+  //std::cout << p << stdd::endl; ERRORE
+
+  std::cout << p.i << std::endl;
+  std::cout << p.d << std::endl;
+  std::cout << p.c << std::endl;
+
+  std::cout << "Dimensione di pippo: " << sizeof(pippo) << std::endl;
+
+  pippo *ptr = &p;
+
+  ptr -> i;
+}
+
+void test_const(){
+  const int i = 999;
+
+  //i = 0; ERRORE
+  
+  const int *ptr = &i;
+  //int *ptr = &i; ERRORE
+  //*ptr = 0; ERRORE
+
+  int * ptr2 = const_cast<int*>(ptr);
+
+  int j = i;
+}
+
+void test_stringheC(){
+  char str[] = "Buon giorno";
+
+  std::cout << str << std::endl;
+
+  char *p = str;
+
+  *(p + 4) = '\0';
+
+  std::cout << p << std::endl;
+
+  std::cout << p[5] << std::endl;
+}
+
+int main(int argc, char *argv[]) {
   stampa(); // funzione che è definita in ops.cpp
 
   test_io();
@@ -134,6 +231,29 @@ int main() {
 
   test_puntatori();
 
+  test_array_primitivi();
+
+  test_reference();
+
+  test_struct();
+
+  test_const();
+
+  test_stringheC();
+
+  std::cout << "Numero di argomenti: " << argc << std::endl;
+  for(int i = 1 ; i < argc ; ++i){
+    std::cout << "Argomento " << i << ": " << argv[i] << std::endl;
+  }
+
+  int i = std::stoi(argv[1]);
+  std::cout << "Valore dell'argomento: " << i <<std::endl;
+
+  std::stringstream ss(argv[1]);
+  int j;
+
+  ss >> j;
+  std::cout << "Valore dell'argomento: " << j <<std::endl;
 
   return 0; 
   // ritorna un codice di errore al sistema operativo (che può ignorarlo)
