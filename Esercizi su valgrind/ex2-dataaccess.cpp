@@ -7,7 +7,7 @@ int main(int argc, char** argv)
 {
   int i;
   int *a;
-  a = new int[10];
+  //a = new int[10];
   a = new int[11];
 
   for (i = 0; i < 11; i++)
@@ -15,11 +15,13 @@ int main(int argc, char** argv)
 
   for (i = 0; i < 10; i++)
     cout << a[i] << " ";
-  delete [] a;
+  //delete [] a;
 
   a[10] = 11;
   cout << "- " << a[10];
   cout << endl;
+
+  delete [] a;
 
   return 0;
 }

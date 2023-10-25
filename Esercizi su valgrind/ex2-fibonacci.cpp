@@ -74,7 +74,7 @@ void f ( int n )
   int i;
   int *x;
 
-  x = new int[n]();
+  x = new int[n];
 
   x[0] = 1;
   cout << "  " << 0 << "  " << x[0] << "\n";
@@ -82,7 +82,7 @@ void f ( int n )
   x[1] = 1;
   cout << "  " << 1 << "  " << x[1] << "\n";
 
-  for ( i = 2; i <= n; i++ )
+  for ( i = 2; i < n; i++ )
   {
     x[i] = x[i-1] + x[i-2];
     cout << "  " << i << "  " << x[i] << "\n";
@@ -90,5 +90,5 @@ void f ( int n )
 
   delete [] x;
 
-  return 0;
+  //return 0;
 }

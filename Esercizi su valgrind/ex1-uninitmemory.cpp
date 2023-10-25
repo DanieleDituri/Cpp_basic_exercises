@@ -16,7 +16,9 @@ int main(int argc, char** argv)
 
   cout << endl;
 
-  int b = a[11];
+  //int b = a[11];
+
+  delete[] a;
 
   return 0;
 }

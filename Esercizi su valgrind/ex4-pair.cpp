@@ -18,7 +18,7 @@ int main(int argc, char** argv)
 	for(i = 0; i < 5; i++)
 		*(b+i) = *(a+i);	// b[i] = a[i];
 
-	delete a;
+	delete [] a;
 	
 	for(i = 0; i < 5; i++)
 		cout << b[i];
