@@ -70,6 +70,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;iostream&gt;</code><br />
 <code>#include &lt;cassert&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
 </div>
 <p><a href="main_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
@@ -88,6 +89,17 @@ Functions</h2></td></tr>
 <tr class="separator:a05d3a1d552ffb1e2f5d9721b53e850f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82492747b74c071d9a2f590877602899"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a82492747b74c071d9a2f590877602899">inverti_stringa</a> (char *str)</td></tr>
 <tr class="separator:a82492747b74c071d9a2f590877602899"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c65190d11acf5a13abc9f207d8638e4"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8c65190d11acf5a13abc9f207d8638e4">copia_stringa</a> (const char *str)</td></tr>
+<tr class="separator:a8c65190d11acf5a13abc9f207d8638e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08eef998d4595e64c50b7e8f529d36d2"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a08eef998d4595e64c50b7e8f529d36d2">concatena_stringhe</a> (const char *str1, const char *str2)</td></tr>
+<tr class="separator:a08eef998d4595e64c50b7e8f529d36d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbaee46290d4d79434b0e447fec15ccd"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#adbaee46290d4d79434b0e447fec15ccd">cerca_stringa</a> (const char *s1, const char *st)</td></tr>
+<tr class="separator:adbaee46290d4d79434b0e447fec15ccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8166ae1b3a1fea490a907f26fd046b94"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a8166ae1b3a1fea490a907f26fd046b94">cerca_stringa</a> (char *s1, const char *st)</td></tr>
+<tr class="separator:a8166ae1b3a1fea490a907f26fd046b94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb0fd812f85dc3431d6ef6bd1aa8ca6c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#abb0fd812f85dc3431d6ef6bd1aa8ca6c">sovrascrivi_stringa</a> (char *s1, const char *st, const char *s2)</td></tr>
+<tr class="memdesc:abb0fd812f85dc3431d6ef6bd1aa8ca6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sostituisce tutte le occorrenze di una sottostringa in una stringa con un'altra sottostringa.  <a href="main_8cpp.html#abb0fd812f85dc3431d6ef6bd1aa8ca6c">More...</a><br /></td></tr>
+<tr class="separator:abb0fd812f85dc3431d6ef6bd1aa8ca6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ddf1224851353fc92bfbff6f499fa97"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a0ddf1224851353fc92bfbff6f499fa97">main</a> (int argc, char *argv[])</td></tr>
 <tr class="separator:a0ddf1224851353fc92bfbff6f499fa97"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -104,7 +116,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00004">4</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00005">5</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -136,7 +148,117 @@ Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>la lunghezza della stringa C senza terminatore</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>str!= nullptr </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00037">37</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00038">38</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8166ae1b3a1fea490a907f26fd046b94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8166ae1b3a1fea490a907f26fd046b94">&#9670;&nbsp;</a></span>cerca_stringa() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* cerca_stringa </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>st</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00114">114</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="adbaee46290d4d79434b0e447fec15ccd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adbaee46290d4d79434b0e447fec15ccd">&#9670;&nbsp;</a></span>cerca_stringa() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* cerca_stringa </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>st</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00092">92</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a08eef998d4595e64c50b7e8f529d36d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a08eef998d4595e64c50b7e8f529d36d2">&#9670;&nbsp;</a></span>concatena_stringhe()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* concatena_stringhe </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00074">74</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="a8c65190d11acf5a13abc9f207d8638e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c65190d11acf5a13abc9f207d8638e4">&#9670;&nbsp;</a></span>copia_stringa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">char* copia_stringa </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>str</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00062">62</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -156,7 +278,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00050">50</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00051">51</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -186,7 +308,66 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00055">55</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00182">182</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+
+</div>
+</div>
+<a id="abb0fd812f85dc3431d6ef6bd1aa8ca6c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb0fd812f85dc3431d6ef6bd1aa8ca6c">&#9670;&nbsp;</a></span>sovrascrivi_stringa()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void sovrascrivi_stringa </td>
+          <td>(</td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>s1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>st</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>s2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sostituisce tutte le occorrenze di una sottostringa in una stringa con un'altra sottostringa. </p>
+<p>Questa funzione cerca la sottostringa <code>st</code> all'interno della stringa <code>s1</code> e la sostituisce con la stringa <code>s2</code>. Questa operazione viene eseguita in tutte le occorrenze di <code>st</code> all'interno di <code>s1</code>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s1</td><td>La stringa in cui cercare e sostituire le occorrenze di <code>st</code>. </td></tr>
+    <tr><td class="paramname">st</td><td>La sottostringa da cercare e sostituire. </td></tr>
+    <tr><td class="paramname">s2</td><td>La stringa con cui sostituire <code>st</code>.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section pre"><dt>Precondition</dt><dd><code>s1</code>, <code>st</code>, e <code>s2</code> devono essere puntatori validi e non dovrebbero essere <code>nullptr</code>. </dd>
+<dd>
+La lunghezza di <code>s1</code> (L1) deve essere maggiore di zero. </dd>
+<dd>
+La lunghezza di <code>st</code> (Lt) deve essere maggiore di zero. </dd>
+<dd>
+La lunghezza di <code>s1</code> (L1) deve essere minore della lunghezza di <code>st</code> (Lt). </dd>
+<dd>
+La lunghezza di <code>st</code> (Lt) deve essere uguale alla lunghezza di <code>s2</code> (L2).</dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Questa funzione modifica direttamente la stringa <code>s1</code> per sostituire le occorrenze di <code>st</code> con <code>s2</code>. </dd>
+<dd>
+La funzione termina quando non sono più presenti occorrenze di <code>st</code> in <code>s1</code>. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00157">157</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
@@ -216,7 +397,7 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section pre"><dt>Precondition</dt><dd>str != nullptr </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00015">15</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="main_8cpp_source.html#l00016">16</a> of file <a class="el" href="main_8cpp_source.html">main.cpp</a>.</p>
 
 </div>
 </div>
