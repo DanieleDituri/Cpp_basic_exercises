@@ -3,7 +3,7 @@
 
   @brief File header della classe dbuffer
 
-  File di dichiarazioni della classe dbuffer 
+  File di dichiarazioni della classe dbuffer
 */
 
 #ifndef DBUFFER_H
@@ -16,21 +16,21 @@
 
   Classe che rappresenta un array dinamico di interi.
 */
-class dbuffer {
+class dbuffer
+{
 public:
   typedef unsigned int size_type; ///< Tipo di dato per la dimensione dell'array
 
 private:
   size_type _size; ///< Dimensione dell'array
-  int * _buffer;      ///< Puntatore all'array di interi
+  int *_buffer;    ///< Puntatore all'array di interi
 
 public:
-
   /**
     @brief Costruttore di default
 
     1° METODO FONDAMENTALE DELLE CLASSI
-    Construttore di default che inizializza il 
+    Construttore di default che inizializza il
     dbuffer ad un array dinamico vuoto.
 
     @post _size == 0
@@ -47,7 +47,7 @@ public:
     @param size dimensione dell'array da istanziare
 
     @post _size == size
-    @post _buffer != nullptr 
+    @post _buffer != nullptr
   */
   explicit dbuffer(size_type size);
 
@@ -62,7 +62,7 @@ public:
     @param value valore da assegnare a tutte le celle dell'array
 
     @post _size == size
-    @post _buffer != nullptr 
+    @post _buffer != nullptr
     @post _buffer[i] == value
   */
   dbuffer(size_type size, int value);
@@ -98,59 +98,59 @@ public:
 
     @param index della cella da leggere/scrivere
     @return reference all'intero da leggere/scrivere
-    
+
     @pre index<_size
   */
-  int& value(size_type index);
+  int &value(size_type index);
 
   /**
     @brief Metodo getter di una cella dell'array
 
     @param index della cella da leggere
     @return reference all'intero da leggere
-    
+
     @pre index<_size
   */
-  const int& value(size_type index) const;
+  const int &value(size_type index) const;
 
   /**
     Operatore getter/setter di una cella dell'array
 
     @param index della cella da leggere/scrivere
     @return reference al'intero da leggere/scrivere
-    
+
     @pre index<_size
   */
-  int& operator[](size_type index);
+  int &operator[](size_type index);
 
   /**
     @brief Operatore getter di una cella dell'array
 
     @param index della cella da leggere
     @return reference all'intero da leggere
-    
+
     @pre index<_size
   */
-   const int& operator[](size_type index) const;
+  const int &operator[](size_type index) const;
 
   /**
     @brief Stampa il contenuto dell'array dinamico su cout
 
     Stampa il contenuto dell'array dinamico su cout
   */
-  void print(void) const; 
+  void print(void) const;
 
   /**
     @brief Metodo di riempimento dell'array
 
-    Metodo che assegna ad ogni cella dell'array il valore 
+    Metodo che assegna ad ogni cella dell'array il valore
     passato. value == 0 di default.
 
     @param value valore da assegnare alle celle dell'array
 
     @post _buffer[i] == value
   */
-  void fill(int value=0);
+  void fill(int value = 0);
 
   /**
     @brief Costruttore di copia (Copy constructor)
@@ -179,7 +179,7 @@ public:
     @post _size == other._size
     @post _buffer[i] == other._buffer[i]
   */
-  dbuffer& operator=(const dbuffer &other); // "*this" = other
+  dbuffer &operator=(const dbuffer &other); // "*this" = other
 
   /**
     @brief Metodo swap
@@ -192,11 +192,11 @@ public:
     @post this->_buffer == other._buffer
     @post other._size == this->_size
     @post other._buffer == this->other._buffer
-  */  
+  */
   void swap(dbuffer &other);
 
   // Permette alla funzione globale di accedere ai dati privati
-  friend std::ostream& operator<<(std::ostream &os, const dbuffer &db);
+  friend std::ostream &operator<<(std::ostream &os, const dbuffer &db);
 };
 
 /**
@@ -210,6 +210,6 @@ public:
 
   @return reference allo stream di output (operando di sinistra)
 */
-std::ostream& operator<<(std::ostream &os, const dbuffer &db);
+std::ostream &operator<<(std::ostream &os, const dbuffer &db);
 
 #endif
