@@ -11,7 +11,7 @@ private:
     int* _buffer;
 
 public:
-    dbuffer(); // default constructor
+    dbuffer(); // default constructor FONDAMENTALE 1
 
     explicit dbuffer(size_type size); // constructor with size
 
@@ -21,9 +21,11 @@ public:
 
     void fill_buffer(); // fill the buffer
 
-    dbuffer(const dbuffer &pT); // copy constructor
+    dbuffer(const dbuffer &pT); // copy constructor FONDAMENTALE 3
 
-    ~dbuffer(); // destructor
+    dbuffer& operator=(const dbuffer &pT); // assignment operator FONDAMENTALE 4
+
+    ~dbuffer(void); // destructor FONDAMENTALE 2
 };
 
 #endif

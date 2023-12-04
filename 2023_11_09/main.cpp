@@ -16,5 +16,10 @@ int main()
     dbuffer db4(db1);
     db4.print_buffer();
 
+    dbuffer *pdb = new dbuffer();
+
+    delete pdb; // destructor is explicitly called for the pointer
+                // because it was created with the new keyword (dynamic allocation)
+
     return 0;
 }

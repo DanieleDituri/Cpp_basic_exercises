@@ -1,19 +1,22 @@
 #include <iostream>
 #include <cassert>
 #include <ostream>
+#include <algorithm>
 #include "dbuffer.h"
 
 dbuffer::dbuffer() : _size(0), _buffer(nullptr) {}
 
-dbuffer::dbuffer(size_type size) : _size(size)
+dbuffer::dbuffer(size_type size) : _size(0), _buffer(nullptr)
 {
     _buffer = new int[size];
+    _size = size;
 }
 
-dbuffer::dbuffer(size_type size, int value) : _size(size)
+dbuffer::dbuffer(size_type size, int value) : _size(0), _buffer(nullptr)
 {
     _buffer = new int[size];
-    for (size_type i = 0 ; i < _size ; i++)
+    _size = size;
+    for (size_type i = 0; i < _size; i++)
     {
         _buffer[i] = value;
     }
@@ -28,11 +31,12 @@ void dbuffer::print_buffer() const
     }
 
     std::cout << "[ ";
-    for (size_type i = 0 ; i < _size - 1 ; i++)
+    for (size_type i = 0; i < _size - 1; i++)
     {
         std::cout << _buffer[i] << ", ";
     }
-    std::cout << _buffer[_size - 1] << " ]" << std::endl << std::endl;
+    std::cout << _buffer[_size - 1] << " ]" << std::endl
+              << std::endl;
 }
 
 void dbuffer::fill_buffer()
@@ -48,16 +52,31 @@ dbuffer::dbuffer(const dbuffer &pT)
 {
     _size = pT._size;
     _buffer = new int[_size];
-    for (size_type i = 0 ; i < _size ; i++)
+    for (size_type i = 0; i < _size; i++)
     {
         _buffer[i] = pT._buffer[i];
     }
 }
 
-
-
-dbuffer::~dbuffer()
+dbuffer &dbuffer::operator=(const dbuffer &pT)
 {
+    if (this != &pT)
+    {
+        dbuffer tmp(pT);
+
+        std::swap(_size, tmp._size);
+        std::swap(_buffer, tmp._buffer);
+    }
+
+    return *this;
+}
+
+dbuffer::~dbuffer(void)
+{
+    if (_buffer != nullptr)
+    {
+        delete[] _buffer;
+    }
     _size = 0;
-    delete[] _buffer;
+    _buffer = nullptr;
 }
