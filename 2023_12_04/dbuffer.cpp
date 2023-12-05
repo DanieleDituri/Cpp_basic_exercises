@@ -48,6 +48,47 @@ void dbuffer::fill_buffer()
     }
 }
 
+unsigned int dbuffer::get_size() const
+{
+    return _size;
+}
+
+int dbuffer::get_value(size_type index)
+{
+    assert(index >= 0 && index < _size);
+    return *(_buffer + index); // or _buffer[index]
+}
+
+void dbuffer::set_value(size_type index, int value)
+{
+    assert(index >= 0 && index < _size);
+    *(_buffer + index) = value; // or _buffer[index] = value
+}
+
+int &dbuffer::value(size_type index)
+{
+    assert(index >= 0 && index < _size);
+    return *(_buffer + index); // or _buffer[index]
+}
+
+const int &dbuffer::value(size_type index) const
+{
+    assert(index >= 0 && index < _size);
+    return *(_buffer + index); // or _buffer[index]
+}
+
+int &dbuffer::operator[](size_type index)
+{
+    assert(index >= 0 && index < _size);
+    return *(_buffer + index); // or _buffer[index]
+}
+
+const int &dbuffer::operator[](size_type index) const
+{
+    assert(index >= 0 && index < _size);
+    return *(_buffer + index); // or _buffer[index]
+}
+
 dbuffer::dbuffer(const dbuffer &pT)
 {
     _size = pT._size;
@@ -69,6 +110,18 @@ dbuffer &dbuffer::operator=(const dbuffer &pT)
     }
 
     return *this;
+}
+
+std::ostream &operator<<(std::ostream &os, const dbuffer &pT)
+{
+    os << pT.get_size() << std::endl;
+    for (unsigned int i = 0 ; i < pT.get_size() ; i++)
+    {
+        os << pT[i] << " ";
+    }
+    os << std::endl;
+
+    return os;
 }
 
 dbuffer::~dbuffer(void)

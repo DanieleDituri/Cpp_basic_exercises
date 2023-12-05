@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 #include "dbuffer.h"
 
 int main()
@@ -20,6 +21,14 @@ int main()
 
     delete pdb; // destructor is explicitly called for the pointer
                 // because it was created with the new keyword (dynamic allocation)
+
+    db3[5] = 100;
+    assert(db3[5] == 100);
+
+    db3[3] = db3[5];
+    assert(db3[3] == 100);
+
+    std::cout << db3;
 
     return 0;
 }
