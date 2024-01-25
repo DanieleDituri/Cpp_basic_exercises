@@ -1,29 +1,65 @@
+*.a
+*.bin
+*.hex
+*.map
+*.png
+*.log
+*.elf
+*.zip
+*.d
+*.ihex
+*.pyc
 *~
-.*sw?
-\#*
-.DS_Store
+obj_*
+Makefile.target
+tools/doxygen/html
+patches-*
+tools/tunslip
+tools/tunslip6
+build
+tools/coffee-manager/build/
+tools/coffee-manager/coffee.jar
+tools/collect-view/build/
+tools/collect-view/dist/
+COOJA.testlog
 
-*.rej
-*.orig
+# platform build artifacts
+*.cc2538dk
+*.cooja
+*.jn516x
+*.native
+*.nrf52dk
+*.openmote-cc2538
+*.sky
+*.srf06-cc26xx
+*.zoul
 
-*.pro
-/packages/rpm/doxygen.spec
-*.idb
-*.pdb
+# do not ignore platform makefiles
+!Makefile.cc2538dk
+!Makefile.cooja
+!Makefile.jn516x
+!Makefile.native
+!Makefile.nrf52dk
+!Makefile.openmote-cc2538
+!Makefile.sky
+!Makefile.srf06-cc26xx
+!Makefile.zoul
 
-/doxygen_docs
-/doxygen.tag
-/build*
-/qtools_docs
-/warnings.log
+# other nRF52 build artifacts
+*.jlink
 
-tags
-.cache/
+#test artifacts
+*.testlog
+*.log.prog
+*.report
+summary
+*.summary
+*.runerr
+*.runlog
+*.faillog
+tests/[0-9][0-9]-*/report
+tests/[0-9][0-9]-*/org/
 
-.idea
-cmake-build-debug/
-cmake-build-debug-event-trace/
-.vscode/
-
-/examples/html/*
-/examples/latex/*
+# x86 UEFI files
+cpu/x86/uefi/Makefile.uefi
+cpu/x86/uefi/edk2
