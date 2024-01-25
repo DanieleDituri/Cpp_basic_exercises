@@ -70,4 +70,6 @@ char *concatena(const char *s1, const char *s2);
  */
 const char *cerca(const char *s1, const char *st);
 
+void change(char *s1, const char *st, const char *st2);
+
 #endif

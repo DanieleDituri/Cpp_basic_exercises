@@ -78,5 +78,14 @@ int main(int argc, char *argv[])
         std::cout << "Passare due stringhe" << std::endl;
     }
 
+    if (argc > 3)
+    {
+        std::cout << "Prova di change():" << std::endl;
+        std::cout << "La stringa " << argv[1] << " modificata è ";
+        change(argv[1], argv[2], argv[3]);
+        std::cout << argv[1] << std::endl;
+        std::cout << std::endl;
+    }
+
     return 0;
 }
