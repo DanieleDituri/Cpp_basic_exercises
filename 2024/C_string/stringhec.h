@@ -70,6 +70,15 @@ char *concatena(const char *s1, const char *s2);
  */
 const char *cerca(const char *s1, const char *st);
 
+/**
+ * @brief Changes a substring in a given string.
+ * 
+ * This function replaces all occurrences of a substring `st` in the string `s1` with another substring `st2`.
+ * 
+ * @param s1 The string in which the substring will be replaced.
+ * @param st The substring to be replaced.
+ * @param st2 The substring to replace `st` with.
+ */
 void change(char *s1, const char *st, const char *st2);
 
 #endif
